@@ -3,7 +3,17 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const productionConfig = merge([
+    {
+      output: {
+        publicPath: "/",
+        // eslint-disable-next-line no-dupe-keys
+        publicPath: "/virtualkeyboard/",
+      },
+    },
+  ]);
 module.exports = {
+    productionConfig,
     mode: 'development',
     entry: './src/assets/index.js',
     output: {
